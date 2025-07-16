@@ -23,9 +23,9 @@ def transcribe_audio(file_path):
     return processor.decode(predicted_ids[0])
 
 if __name__ == "__main__":
-    audio_path = "sample_audio.wav"
+    audio_path = input("Enter the path to the .wav audio file: ").strip()
     if not os.path.exists(audio_path):
-        print("Please place a 'sample_audio.wav' file in the same folder as this script.")
+        print("File not found. Please check the path and try again.")
     else:
         text = transcribe_audio(audio_path)
         print("Transcription:\n", text)
